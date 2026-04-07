@@ -1,45 +1,58 @@
-<<<<<<< HEAD
-eBay QA Automation — E2E Test
+# eBay QA Automation — E2E Test
 
-Playwright + Python · POM · OOP · Data-Driven
+**Playwright + Python · POM · OOP · Data-Driven**
 
-Overview
+---
+
+## Overview
 
 This project implements an end-to-end automation flow for an e-commerce website (eBay example), covering:
 
-Login (optional)
-Product search with price filtering
-Adding items to cart
-Validating cart total against a budget
+- Login (optional)
+- Product search with price filtering
+- Adding items to cart
+- Validating cart total against a budget
 
 The solution follows clean architecture principles:
 
-Page Object Model (POM)
-Object-Oriented Design (OOP)
-Data-Driven testing (JSON input)
-Project Structure
+- Page Object Model (POM)
+- Object-Oriented Design (OOP)
+- Data-Driven testing (JSON input)
+
+---
+
+## Project Structure
+
+
 ebay-qa-automation/
 ├── config/
-│   └── config.yaml
+│ └── config.yaml
 ├── data/
-│   └── test_data.json
+│ └── test_data.json
 ├── pages/
-│   ├── base_page.py
-│   ├── login_page.py
-│   ├── home_page.py
-│   ├── search_results_page.py
-│   ├── product_page.py
-│   └── cart_page.py
+│ ├── base_page.py
+│ ├── login_page.py
+│ ├── home_page.py
+│ ├── search_results_page.py
+│ ├── product_page.py
+│ └── cart_page.py
 ├── tests/
-│   └── test_ebay_e2e.py   # Main E2E test
+│ └── test_ebay_e2e.py # Main E2E test
 ├── utils/
-│   └── helpers.py
+│ └── helpers.py
 ├── reports/
 ├── conftest.py
 ├── pytest.ini
 └── requirements.txt
-Setup
-1. Install dependencies
+
+
+---
+
+## Setup
+
+### 1. Install dependencies
+
+```bash
 pip install -r requirements.txt
 playwright install chromium
 2. (Optional) Set credentials
@@ -65,9 +78,7 @@ Login (optional)
 Search for items by name under a maximum price
 Collect matching product URLs
 Add item(s) to cart
-
 Validate cart total does not exceed:
-
 budget_per_item × number_of_items
 Core Functions
 Function	Description
@@ -110,6 +121,3 @@ Readability
 Stability under real-world conditions
 
 Rather than bypassing external protections, it demonstrates how to handle them correctly in a production-like environment.
-=======
-# ebay-qa-automation
->>>>>>> 81aabad8f26ee9b6e99c36e4f57273bdfb918ca6
