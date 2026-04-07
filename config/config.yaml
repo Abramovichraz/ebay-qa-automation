@@ -1,0 +1,23 @@
+browser:
+  name: chromium          # chromium | firefox | webkit
+  headless: true
+  slow_mo: 300            # Increased to avoid bot detection
+  viewport:
+    width: 1440
+    height: 900
+
+timeouts:
+  default: 30000          # ms
+  navigation: 60000
+  element: 15000
+
+base_url: https://www.ebay.com
+
+paths:
+  screenshots: reports/screenshots
+  allure_results: reports/allure-results
+  html_report: reports/html/report.html
+
+ebay:
+  price_filter_submit_delay: 2500   # Increased for better stability
+  pagination_max_pages: 10          # safety cap for pagination loops
