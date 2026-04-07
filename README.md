@@ -23,7 +23,6 @@ The solution follows clean architecture principles:
 
 ## Project Structure
 
-
 ebay-qa-automation/
 ├── config/
 │ └── config.yaml
@@ -55,21 +54,26 @@ ebay-qa-automation/
 ```bash
 pip install -r requirements.txt
 playwright install chromium
-2. (Optional) Set credentials
 
-You can run the test in guest mode, or provide credentials.
 
-Recommended (more secure):
+---
 
-Create a .env file:
+## Setup
+
+### 1. Install dependencies
+
+```bash
+pip install -r requirements.txt
+playwright install chromium
 
 EBAY_EMAIL=your@email.com
 EBAY_PASSWORD=yourpassword
+
 Run Test
 
 Run the main E2E scenario:
-
 python -m pytest tests/test_ebay_e2e.py -v
+
 Test Scenario
 
 The main test (TC_001) performs:
@@ -80,12 +84,16 @@ Collect matching product URLs
 Add item(s) to cart
 Validate cart total does not exceed:
 budget_per_item × number_of_items
+
 Core Functions
-Function	Description
-search_items_by_name_under_price	Searches products and returns URLs under max price
-add_items_to_cart	Adds selected items to cart
-assert_cart_total_not_exceeds	Validates total against budget
-login	Performs authentication (optional)
+
+| Function                           | Description                                        |
+| ---------------------------------- | -------------------------------------------------- |
+| `search_items_by_name_under_price` | Searches products and returns URLs under max price |
+| `add_items_to_cart`                | Adds selected items to cart                        |
+| `assert_cart_total_not_exceeds`    | Validates total against budget                     |
+| `login`                            | Performs authentication (optional)                 |
+
 Reports
 
 After execution:
@@ -94,6 +102,7 @@ Screenshots are saved in reports/screenshots/
 HTML report is generated automatically
 Allure report can be generated:
 allure serve reports/allure-results
+
 ⚠️ Known Limitations
 
 This project runs against a live production website (eBay).
@@ -112,6 +121,22 @@ Clean separation between test logic and UI logic (POM)
 Reusable page objects
 Data-driven scenario configuration via JSON
 Minimal, focused implementation aligned with assignment requirements
+Final Note
+
+This solution focuses on:
+
+Clean architecture
+Readability
+Stability under real-world conditions
+
+Rather than bypassing external protections, it demonstrates how to handle them correctly in a production-like environment.
+
+Design Notes
+Clean separation between test logic and UI logic (POM)
+Reusable page objects
+Data-driven scenario configuration via JSON
+Minimal, focused implementation aligned with assignment requirements
+
 Final Note
 
 This solution focuses on:
