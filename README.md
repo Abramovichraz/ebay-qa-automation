@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 eBay QA Automation — E2E Test
 
 Playwright + Python · POM · OOP · Data-Driven
@@ -109,3 +110,6 @@ Readability
 Stability under real-world conditions
 
 Rather than bypassing external protections, it demonstrates how to handle them correctly in a production-like environment.
+=======
+# ebay-qa-automation
+>>>>>>> 81aabad8f26ee9b6e99c36e4f57273bdfb918ca6
